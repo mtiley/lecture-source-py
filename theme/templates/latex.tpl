@@ -248,5 +248,3 @@
 \bibliographystyle{plain}
 \bibliography{((( nb.metadata.get("latex_metadata", {}).get("bib", "references") )))}
 ((* endblock bibliography *))
-
-\end{document}
