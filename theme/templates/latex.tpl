@@ -28,7 +28,7 @@
 \makeatother
 \let\Oldincludegraphics\includegraphics
 % Set max figure width to be 80% of text width, for now hardcoded.
-\renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+\renewcommand{\includegraphics}[1]{\centering\Oldincludegraphics[width=.8\maxwidth]{#1}}
 % Ensure that by default, figures have no caption (until we provide a
 % proper Figure object with a Caption API and a way to capture that
 % in the conversion process - todo).
@@ -141,6 +141,7 @@
 \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
 \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
 
 % Define a nice break command that doesn't care if a line doesn't already
 % exist.
