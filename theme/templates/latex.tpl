@@ -184,6 +184,12 @@
 \date{\today}
 \maketitle
 
+((*- if nb.metadata.get("latex_metadata", {}).get("logo", ""): -*))
+\begin{center}
+   \adjustimage{max size={0.6\linewidth}{0.6\paperheight}}{((( nb.metadata["latex_metadata"]["logo"] )))}
+\end{center}
+((*- endif -*))
+
 ((* endblock maketitle *))
 
 
@@ -215,7 +221,7 @@
 
 % Display stream ouput with coloring
 ((* block stream *))
-    \begin{Verbatim}[commandchars=\\\{\}]
+    \begin{Verbatim}[commandchars=\\\{\}, fontsize=\scriptsize]
 ((( output.text | wrap_text(86) | escape_latex | ansi2latex )))
     \end{Verbatim}
 ((* endblock stream *))
@@ -231,7 +237,7 @@
     ((*- set execution_count = " " -*))
     ((*- endif -*))
     ((*- set indention =  " " * (execution_count | length + 7) -*))
-\begin{Verbatim}[commandchars=\\\{\}]
+\begin{Verbatim}[commandchars=\\\{\}, fontsize=\scriptsize]
 ((( text | add_prompts(first='{\color{' ~ prompt_color ~ '}' ~ prompt ~ '[{\\color{' ~ prompt_color ~ '}' ~ execution_count ~ '}]:} ', cont=indention) )))
 \end{Verbatim}
 ((*- endmacro *))
