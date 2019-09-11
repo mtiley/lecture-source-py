@@ -158,18 +158,9 @@
 % Title Page
 %===============================================================================
 
-((* block title -*))
-((*- endblock title *))
-((* block author -*))
-((* endblock author *))
-
 ((* block maketitle *))
 
-((*- if nb.metadata.get("latex_metadata", {}).get("title", ""): -*))
-\title{((( nb.metadata["latex_metadata"]["title"] )))}
-((*- else -*))
-\title{((( resources.metadata.name | ascii_only | escape_latex )))}
-((*- endif *))
+\title{((( nb.metadata.title | ascii_only | escape_latex )))}
 
 ((*- if nb.metadata.get("latex_metadata", {}).get("author", ""): -*))
 \author{((( nb.metadata["latex_metadata"]["author"] )))}
@@ -192,7 +183,7 @@
 
 ((* endblock maketitle *))
 
-\parskip 0.090in
+
 %===============================================================================
 % Input
 %===============================================================================

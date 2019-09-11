@@ -457,3 +457,5 @@ jupyter_pdf_title = True
 jupyter_pdf_logo = "_static/img/qe-menubar-logo.png"
 
 jupyter_bib_file = "_static/quant-econ"
+
+jupyter_pdf_author = "Thomas J. Sargent and John Stachurski"
