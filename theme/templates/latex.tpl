@@ -253,5 +253,5 @@
 ((* block bibliography *))
 % Add a bibliography block to the postdoc
 \bibliographystyle{plain}
-\bibliography{((( nb.metadata.get("latex_metadata", {}).get("bib", "references") )))}
+\bibliography{((( nb.metadata.get("latex_metadata", {}).get("bib", "quant-econ") )))}
 ((* endblock bibliography *))
