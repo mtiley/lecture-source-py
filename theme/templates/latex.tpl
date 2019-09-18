@@ -28,7 +28,7 @@
 \makeatother
 \let\Oldincludegraphics\includegraphics
 % Set max figure width to be 80% of text width, for now hardcoded.
-\renewcommand{\includegraphics}[1]{\centering\Oldincludegraphics[width=.8\maxwidth]{#1}}
+\renewcommand{\includegraphics}[1]{\begin{center}\Oldincludegraphics[width=.8\maxwidth]{#1}\end{center}}
 % Ensure that by default, figures have no caption (until we provide a
 % proper Figure object with a Caption API and a way to capture that
 % in the conversion process - todo).
@@ -160,12 +160,10 @@
 
 ((* block maketitle *))
 
-\title{((( nb.metadata.title | ascii_only | escape_latex )))}
-
 ((*- if nb.metadata.get("latex_metadata", {}).get("author", ""): -*))
 \author{((( nb.metadata["latex_metadata"]["author"] )))}
 ((*- else -*))
-\author{Michael Goerz}
+\author{Al Pacino}
 ((*- endif *))
 
 ((*- if nb.metadata.get("latex_metadata", {}).get("affiliation", ""): -*))
@@ -192,7 +190,8 @@
 % nbextensions (which set the hide_input metadata flags)
 
 ((* block input scoped *))
-((*- if cell.metadata.hide_input or nb.metadata.hide_input: -*))
+((( cell.metadata.get("hide_input", "") )))
+((*- if cell.metadata.hide_input or nb.metadata.hide_input or cell.metadata.get("hide_input", ""): -*))
 ((*- else -*))
    ((( custom_add_prompt(cell.source | wrap_text(88) | highlight_code(strip_verbatim=True), cell, 'In ', 'incolor') )))
 ((*- endif *))

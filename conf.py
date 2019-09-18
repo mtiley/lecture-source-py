@@ -452,8 +452,6 @@ jupyter_theme_path = 'theme'
 jupyter_template_path = 'theme/templates'
 
 ### pdf options
-jupyter_pdf_title = True
-
 jupyter_pdf_logo = "_static/img/qe-menubar-logo.png"
 
 jupyter_bib_file = "_static/quant-econ"
