@@ -60,10 +60,9 @@ Key ideas in play will be:
 
 -  A **uniformly most powerful test**
 
-We'll begin with some imports
+We'll begin with some imports:
 
-.. code-block:: python3
-
+.. code-block:: ipython
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -184,7 +183,7 @@ The bottom panel presents mixtures of these distributions, with various mixing p
 
 
 
-.. code-block:: ipython
+.. code-block:: python3
 
     def beta_function_factory(a, b):
 
@@ -609,8 +608,14 @@ and plot these on our value function plot
 
         # The cutoff points can be found by differencing these costs with
         # The Bellman equation (J is always less than or equal to p_c_i)
-        β = π_grid[np.searchsorted(payoff_f1 - np.minimum(h, payoff_f0), 1e-10) - 1]
-        α = π_grid[np.searchsorted(np.minimum(h, payoff_f1) - payoff_f0, 1e-10) - 1]
+        β = π_grid[np.searchsorted(
+                                  payoff_f1 - np.minimum(h, payoff_f0),
+                                  1e-10)
+                   - 1]
+        α = π_grid[np.searchsorted(
+                                  np.minimum(h, payoff_f1) - payoff_f0,
+                                  1e-10)
+                   - 1]
 
         return (β, α)
 
