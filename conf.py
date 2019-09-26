@@ -458,6 +458,8 @@ jupyter_bib_file = "_static/quant-econ"
 
 jupyter_pdf_author = "Thomas J. Sargent and John Stachurski"
 
-jupyter_pdf_urlpath = "https://lectures.quantecon.org/py/"
-
+# Exclude Document Patterns for PDF Construction
 jupyter_pdf_excludepatterns = ["404", "index", "references"]
+
+# Set urlpath for html links in documents
+jupyter_pdf_urlpath = "https://lectures.quantecon.org/py/"
