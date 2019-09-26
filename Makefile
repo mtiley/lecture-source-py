@@ -43,7 +43,7 @@ clean-website:
 	rm -rf $(BUILDWEBSITE)
 
 clean-pdf:
-	rm -rf $(BUILDPDF)
+	rm -rf $(BUILDDIR)/jupyterpdf
 
 coverage:
 ifneq ($(strip $(parallel)),)
