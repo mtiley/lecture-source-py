@@ -463,3 +463,6 @@ jupyter_pdf_excludepatterns = ["404", "index", "references"]
 
 # Set urlpath for html links in documents
 jupyter_pdf_urlpath = "https://lectures.quantecon.org/py/"
+
+# make book
+jupyter_pdf_book = True
