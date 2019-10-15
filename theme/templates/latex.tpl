@@ -263,7 +263,7 @@
     ((*- set execution_count = "" -*))
     ((*- endif -*))
     ((*- set indention =  " " * (execution_count | length + 7) -*))
-\begin{Verbatim}[mathescape, commandchars=\\\{\}, fontsize=\small, xleftmargin=-3.9em]
+\begin{Verbatim}[commandchars=\\\{\}, fontsize=\small, xleftmargin=-3.9em]
 ((( text.replace('$$','').replace('$','') | add_prompts(first='{\color{' ~ prompt_color ~ '}' ~ prompt ~ '[{\\color{' ~ prompt_color ~ '}' ~ execution_count ~ '}]:} ', cont=indention) )))
 \end{Verbatim}
 ((*- endmacro *))
