@@ -264,7 +264,7 @@
     ((*- endif -*))
     ((*- set indention =  " " * (execution_count | length + 7) -*))
 \begin{Verbatim}[commandchars=\\\{\}, fontsize=\small, xleftmargin=-3.9em]
-((( text.replace('$$','').replace('$','') | add_prompts(first='{\color{' ~ prompt_color ~ '}' ~ prompt ~ '[{\\color{' ~ prompt_color ~ '}' ~ execution_count ~ '}]:} ', cont=indention) )))
+((( text.replace('$$','').replace('$\\',"\\(\\").replace('$','\)') | add_prompts(first='{\color{' ~ prompt_color ~ '}' ~ prompt ~ '[{\\color{' ~ prompt_color ~ '}' ~ execution_count ~ '}]:} ', cont=indention) )))
 \end{Verbatim}
 ((*- endmacro *))
 
